@@ -14,9 +14,6 @@ def hranalytics(prev_vars):
     else:
         start_index = 1 
 
-    
-    st.sidebar.title("Settings")
-    settings_radio = st.sidebar.radio('Page', ['Home', 'Graphic'], index=0)
     st.title("HR Analytics")
     st.header("Context About Data")
     st.markdown("""

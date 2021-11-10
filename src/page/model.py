@@ -9,11 +9,12 @@ def model(prev_vars):
         start_index = prev_vars
     else:
         start_index = 1
-    pickle_dir = "C:/Users/user/Documents/SEMESTER 5/Pengantar Sains Data/Project Python/res/pickle"
-    list_city = load(os.path.join(pickle_dir, "list_city.pkl"))
-    key_pair = load(os.path.join(pickle_dir, "key_pair.pkl"))
-    clf = load(os.path.join(pickle_dir, "model.pkl"))
-    pipeline = load(os.path.join(pickle_dir, "pipeline.pkl"))
+    pickle_dir = "../../res/pickle"
+    this_dir = os.path.dirname(__file__)
+    list_city = load(os.path.join(this_dir, os.path.join(pickle_dir, "list_city.pkl")))
+    key_pair = load(os.path.join(this_dir, os.path.join(pickle_dir, "key_pair.pkl")))
+    clf = load(os.path.join(this_dir, os.path.join(pickle_dir, "model.pkl")))
+    pipeline = load(os.path.join(this_dir, os.path.join(pickle_dir, "pipeline.pkl")))
     st.title("Predict your data")
     city = st.selectbox("City", list_city)
     city_development_index = key_pair[city]

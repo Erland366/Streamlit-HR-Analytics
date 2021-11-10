@@ -40,7 +40,6 @@ def model(prev_vars):
             x = pipeline.transform(data)
             y = clf.predict(x)[0]  # just get single value
             prob = clf.predict_proba(x)[0].tolist()  # send to list for return
-            print(y)
             if prob:
                 final_dict = {0 : "Employee is not going to leave", 1 : "Employee is going to Leave"}
                 st.text(f"Your prediction is {final_dict[y]} with probability of {max(prob)}")
